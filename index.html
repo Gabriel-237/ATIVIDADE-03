@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Fixação 3 - JavaScript</title>
+    <!-- Aponta corretamente para o ficheiro estilo.css -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1>Atividade Prática de Fixação - Lista de Exercícios</h1>
+
+    <!-- Q1: Sistema de Login Académico -->
+    <section class="exercicio">
+        <h2>Questão 01 — Sistema de Login Académico</h2>
+        <form id="form-login">
+            <input type="text" id="login-usuario" placeholder="Utilizador">
+            <input type="password" id="login-senha" placeholder="Palavra-passe">
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="msg-login" class="mensagem"></p>
+    </section>
+
+    <!-- Q2: Controle de Temperatura de Servidor -->
+    <section class="exercicio" id="sec-temperatura">
+        <h2>Questão 02 — Controle de Temperatura de Servidor</h2>
+        <input type="number" id="temp-input" placeholder="Digite a temperatura (°C)">
+        <p id="temp-status">Estado normal</p>
+    </section>
+
+    <!-- Q3: Sistema de Comentários de Rede Social -->
+    <section class="exercicio">
+        <h2>Questão 03 — Sistema de Comentários</h2>
+        <textarea id="comentario" maxlength="200" placeholder="Escreva o seu comentário..."></textarea>
+        <p>Restam <span id="contador-chars">200</span> caracteres.</p>
+    </section>
+
+    <!-- Q4: Loja Virtual de Eletrónicos -->
+    <section class="exercicio">
+        <h2>Questão 04 — Loja Virtual</h2>
+        <p>Produto: <strong>Smartphone X</strong></p>
+        <p>Preço unitário: 250 €</p>
+        <label>Quantidade: <input type="number" id="qtd-produto" value="1" min="1"></label>
+        <p>Total: <strong><span id="total-compra">250.00</span> €</strong></p>
+    </section>
+
+    <!-- Q5: Sistema de Cadastro de Usuários -->
+    <section class="exercicio">
+        <h2>Questão 05 — Força da Palavra-passe</h2>
+        <input type="password" id="pass-forca" placeholder="Digite uma palavra-passe">
+        <p>Força: <span id="msg-forca">-</span></p>
+    </section>
+
+    <!-- Q6: Controle de Luminosidade Inteligente -->
+    <section class="exercicio">
+        <h2>Questão 06 — Controle de Luminosidade</h2>
+        <input type="range" id="slider-luz" min="0" max="100" value="50">
+        <div id="lampada" class="lampada"></div>
+    </section>
+
+    <!-- Q7: Sistema de Pesquisa de Filmes -->
+    <section class="exercicio">
+        <h2>Questão 07 — Pesquisa de Filmes</h2>
+        <input type="text" id="busca-filme" placeholder="Pesquisar filme...">
+        <ul id="lista-filmes">
+            <li>Matrix</li>
+            <li>Inception</li>
+            <li>Interstellar</li>
+            <li>Gladiador</li>
+            <li>Avatar</li>
+        </ul>
+    </section>
+
+    <!-- Q8: Sistema Bancário -->
+    <section class="exercicio">
+        <h2>Questão 08 — Sistema Bancário</h2>
+        <p>Saldo Atual: <strong>500.00 €</strong></p>
+        <input type="number" id="valor-transf" placeholder="Valor da transferência">
+        <button id="btn-transferir">Transferir</button>
+        <p id="msg-banco" class="mensagem"></p>
+    </section>
+
+    <!-- Q9: Sistema de Tema Escuro -->
+    <section class="exercicio">
+        <h2>Questão 09 — Tema Escuro</h2>
+        <button id="btn-tema">Ativar Modo Escuro</button>
+    </section>
+
+    <!-- Q10: Controle de Estoque -->
+    <section class="exercicio">
+        <h2>Questão 10 — Controle de Estoque</h2>
+        <input type="number" id="input-estoque" placeholder="Quantidade em estoque">
+        <p id="alerta-estoque" class="alerta"></p>
+    </section>
+
+    <!-- Q11: Plataforma de Cursos Online -->
+    <section class="exercicio">
+        <h2>Questão 11 — Player de Vídeo (Curso de Linguagens ENEM 2026)</h2>
+        <div class="thumb" id="thumb-aula">
+            <span>▶ Clique na miniatura para carregar a aula: <strong>TUDO DE LINGUAGENS PARA O ENEM 2026!!!</strong></span>
+        </div>
+        <div id="area-video"></div>
+    </section>
+
+    <!-- Q12: Sistema de Avaliação -->
+    <section class="exercicio">
+        <h2>Questão 12 — Avaliação por Estrelas</h2>
+        <div class="estrelas">
+            <span class="estrela" data-nota="1">★</span>
+            <span class="estrela" data-nota="2">★</span>
+            <span class="estrela" data-nota="3">★</span>
+            <span class="estrela" data-nota="4">★</span>
+            <span class="estrela" data-nota="5">★</span>
+        </div>
+        <p id="msg-avaliacao">Selecione uma nota</p>
+    </section>
+
+    <!-- Q13: Calculadora de IMC -->
+    <section class="exercicio">
+        <h2>Questão 13 — Calculadora de IMC</h2>
+        <input type="number" id="imc-peso" placeholder="Peso (kg)" step="0.1">
+        <input type="number" id="imc-altura" placeholder="Altura (m)" step="0.01">
+        <p>IMC: <strong><span id="res-imc">-</span></strong></p>
+    </section>
+
+    <!-- Q14: Sistema de Upload de Arquivos -->
+    <section class="exercicio">
+        <h2>Questão 14 — Upload de Ficheiro</h2>
+        <input type="file" id="input-file">
+        <p>Ficheiro selecionado: <span id="nome-ficheiro">Nenhum</span></p>
+    </section>
+
+    <!-- Q15: Sistema de Votação -->
+    <section class="exercicio">
+        <h2>Questão 15 — Sistema de Votação</h2>
+        <button class="btn-votar" data-candidato="A">Votar no Candidato A</button>
+        <button class="btn-votar" data-candidato="B">Votar no Candidato B</button>
+        <p>Candidato A: <span id="votos-a">0</span> votos</p>
+        <p>Candidato B: <span id="votos-b">0</span> votos</p>
+    </section>
+
+    <!-- Q16: Sistema de Notificações -->
+    <section class="exercicio">
+        <h2>Questão 16 — Notificações</h2>
+        <div id="icone-msg">✉️ Mensagens</div>
+        <div id="caixa-notif" class="escondido">Tens 3 novas mensagens não lidas!</div>
+    </section>
+
+    <!-- Q17: Simulador de Semáforo Inteligente -->
+    <section class="exercicio">
+        <h2>Questão 17 — Semáforo Inteligente</h2>
+        <button id="btn-semaforo">Iniciar Semáforo</button>
+        <div class="semaforo">
+            <div class="luz red" id="luz-vermelha"></div>
+            <div class="luz yellow" id="luz-amarela"></div>
+            <div class="luz green" id="luz-verde"></div>
+        </div>
+    </section>
+
+    <!-- Q18: Sistema de Agenda -->
+    <section class="exercicio">
+        <h2>Questão 18 — Agendamento de Horários</h2>
+        <div id="lista-horarios">
+            <button class="horario">08:00</button>
+            <button class="horario">10:00</button>
+            <button class="horario">14:00</button>
+            <button class="horario">16:00</button>
+        </div>
+        <p id="msg-agenda"></p>
+    </section>
+
+    <!-- Q19: Sistema de Conversão Monetária -->
+    <section class="exercicio">
+        <h2>Questão 19 — Conversão para Dólar</h2>
+        <input type="number" id="val-reais" placeholder="Valor em R$">
+        <p>Valor em USD ($): <strong><span id="res-dolar">0.00</span></strong></p>
+    </section>
+
+    <!-- Q20: Painel de Controle de Música -->
+    <section class="exercicio">
+        <h2>Questão 20 — Player de Música</h2>
+        <button id="btn-play">▶ Play</button>
+        <button id="btn-pause">⏸ Pause</button>
+        <br><br>
+        <label>Volume: <input type="range" id="bar-volume" min="0" max="1" step="0.1" value="0.5"></label>
+        <p id="status-player">Parado</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --input-bg: #f1f5f9;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    --transition: all 0.25s ease-in-out;
+}
+
+/* Modo Escuro (Ativado via JS adicionando .dark-mode ao body) */
+body.dark-mode {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --input-bg: #0f172a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 30px 20px;
+    line-height: 1.5;
+    transition: var(--transition);
+}
+
+/* ==========================================================================
+   2. TÍTULO E ESTRUTURA DOS EXERCÍCIOS (GRID)
+   ========================================================================== */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* Layout em Grelha para distribuir os exercícios */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercicio {
+    width: 100%;
+    max-width: 800px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.exercicio:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.exercicio h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.exercicio p {
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   3. CAMPOS DE ENTRADA, BOTÕES E FORMULÁRIOS
+   ========================================================================== */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Estilização para o formulário da Questão 01 */
+#form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   4. ESTILOS ESPECÍFICOS DAS QUESTÕES
+   ========================================================================== */
+.mensagem {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.alerta {
+    color: #ef4444;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Q6 - Lâmpada */
+.lampada {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(234, 179, 8, 0.5);
+    border: 3px solid var(--border-color);
+    margin: 15px 0 5px 0;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+    transition: background-color 0.1s ease;
+}
+
+/* Q7 - Lista de Filmes */
+#lista-filmes {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#lista-filmes li {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+#lista-filmes li:last-child {
+    border-bottom: none;
+}
+
+#lista-filmes li:hover {
+    background-color: var(--input-bg);
+    border-radius: 6px;
+}
+
+/* Q11 - Vídeo */
+.thumb {
+    width: 100%;
+    max-width: 560px;
+    height: 160px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px dashed var(--primary-color);
+    transition: var(--transition);
+}
+
+.thumb:hover {
+    background: linear-gradient(135deg, #334155, #1e293b);
+    transform: scale(1.01);
+}
+
+.container-iframe {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    margin-top: 12px;
+}
+
+.container-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+}
+
+/* Q12 - Estrelas */
+.estrelas {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.estrela {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--border-color);
+    transition: var(--transition);
+}
+
+.estrela:hover,
+.estrela.ativa {
+    color: #f59e0b;
+    transform: scale(1.15);
+}
+
+/* Q16 - Notificações */
+#icone-msg {
+    display: inline-block;
+    padding: 10px 16px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+#icone-msg:hover {
+    background: var(--primary-hover);
+}
+
+.escondido { 
+    display: none; 
+}
+
+#caixa-notif {
+    margin-top: 10px;
+    padding: 12px 16px;
+    background: rgba(37, 99, 235, 0.1);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Q17 - Semáforo */
+.semaforo {
+    width: 70px;
+    background: #0f172a;
+    padding: 14px 10px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    box-shadow: var(--shadow);
+}
+
+.luz {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 0.2;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.luz.red { background: #ef4444; }
+.luz.yellow { background: #f59e0b; }
+.luz.green { background: #10b981; }
+
+.luz.ativo {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Q18 - Agenda */
+#lista-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.horario {
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.horario:hover {
+    background: var(--border-color);
+}
+
+.horario.selecionado {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE (Ecrãs Mais Pequenos)
+   ========================================================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+    
+    .exercicio {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
